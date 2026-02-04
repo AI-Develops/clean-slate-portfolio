@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Senior Frontend Developer Portfolio specializing in minimalist web design."
+    />
+    <title>Alex Dev | Senior Frontend Developer</title>
+    <style>
+      :root {
+        /* Color Palette */
+        --bg-color: #0f172a;
+        --card-bg: #1e293b;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --accent: #6366f1;
+        --accent-hover: #4f46e5;
+        --border: #334155;
+
+        /* Spacing */
+        --space-sm: 0.5rem;
+        --space-md: 1rem;
+        --space-lg: 2rem;
+        --space-xl: 4rem;
+
+        /* Radius */
+        --radius: 8px;
+      }
+
+      /* Reset & Base */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.2s ease;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* Utility: Container */
+      .container {
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 0 var(--space-lg);
+      }
+
+      /* Navigation */
+      header {
+        padding: var(--space-lg) 0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-weight: 700;
+        font-size: 1.25rem;
+        letter-spacing: -0.025em;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: var(--space-lg);
+      }
+
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: var(--space-xl) 0;
+        max-width: 600px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1.1;
+        margin-bottom: var(--space-md);
+        background: linear-gradient(to right, #fff, #94a3b8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero p {
+        color: var(--text-muted);
+        font-size: 1.25rem;
+        margin-bottom: var(--space-lg);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-sm);
+        background-color: var(--accent);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: var(--radius);
+        font-weight: 600;
+        transition:
+          background-color 0.2s ease,
+          transform 0.1s ease;
+      }
+
+      .btn:hover {
+        background-color: var(--accent-hover);
+        transform: translateY(-1px);
+      }
+
+      .btn svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* Section Styling */
+      section {
+        margin-bottom: var(--space-xl);
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+        margin-bottom: var(--space-lg);
+        color: var(--text-muted);
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+      }
+
+      .section-header svg {
+        width: 16px;
+        height: 16px;
+        color: var(--accent);
+      }
+
+      /* Projects Grid */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--space-lg);
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border);
+        padding: var(--space-lg);
+        border-radius: var(--radius);
+        transition:
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .card:hover {
+        border-color: var(--accent);
+        transform: translateY(-2px);
+      }
+
+      .card h3 {
+        font-size: 1.25rem;
+        margin-bottom: var(--space-sm);
+      }
+
+      .card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        margin-bottom: var(--space-md);
+      }
+
+      .tags {
+        display: flex;
+        gap: var(--space-sm);
+        font-size: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .tag {
+        background-color: var(--bg-color);
+        padding: 0.25rem 0.75rem;
+        border-radius: 99px;
+        color: var(--text-muted);
+        border: 1px solid var(--border);
+      }
+
+      /* Footer */
+      footer {
+        padding: var(--space-lg) 0;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.875rem;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 640px) {
+        .hero {
+          padding: var(--space-lg) 0;
+        }
+        .nav-links {
+          display: none; /* In a real scenario, use a hamburger menu */
+        }
+        footer {
+          flex-direction: column;
+          gap: var(--space-md);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <a href="#" class="logo">Alex.Dev</a>
+          <ul class="nav-links">
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="mailto:hello@alex.dev">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <!-- Hero -->
+        <section class="hero">
+          <h1>Crafting minimal, high-performance web interfaces.</h1>
+          <p>
+            I'm a Senior Frontend Developer focused on building accessible,
+            pixel-perfect experiences with clean code.
+          </p>
+          <a href="#projects" class="btn">
+            <!-- Heroicon: Arrow Down -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
+              />
+            </svg>
+            View Projects
+          </a>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+          <div class="section-header">
+            <!-- Heroicon: CommandLine -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.25 6a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V6Zm3.97.97a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06l-2.25 2.25a.75.75 0 0 1-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 0 1 0-1.06Zm4.28 4.28a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Selected Work
+          </div>
+
+          <div class="grid">
+            <article class="card">
+              <h3>FinTech Dashboard</h3>
+              <p>
+                A real-time data visualization platform for financial markets
+                using WebSockets and SVG charting.
+              </p>
+              <div class="tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS Grid</span>
+                <span class="tag">Vanilla JS</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3>E-Commerce Core</h3>
+              <p>
+                A headless frontend architecture optimized for Core Web Vitals,
+                achieving a 100/100 Lighthouse score.
+              </p>
+              <div class="tags">
+                <span class="tag">Performance</span>
+                <span class="tag">Accessibility</span>
+                <span class="tag">WCAG 2.1</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3>Design System V2</h3>
+              <p>
+                A framework-agnostic component library built with Web Components
+                and Shadow DOM.
+              </p>
+              <div class="tags">
+                <span class="tag">Web Components</span>
+                <span class="tag">Design Tokens</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- About/Stack -->
+        <section id="about">
+          <div class="section-header">
+            <!-- Heroicon: User -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Philosophy
+          </div>
+          <div style="color: var(--text-muted); max-width: 600px;">
+            <p>
+              I believe the best web experiences are invisible. They load
+              instantly, respond naturally to interaction, and respect the user's
+              preferences. My work prioritizes semantic structure and the
+              platform's native capabilities over bloated abstractions.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div>&copy; 2024 Alex Dev. Open Source.</div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="#">GitHub</a>
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
